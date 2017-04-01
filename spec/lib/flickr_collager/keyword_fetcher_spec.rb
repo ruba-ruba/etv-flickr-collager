@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module FlickrCollager
-  describe KeywordFetcher do
+  RSpec.describe KeywordFetcher do
     let(:test_dict_path) { ("spec/fixtures/test_dict.txt") }
     let(:keywords_given) { %w(One Two Three) }
 
