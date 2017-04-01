@@ -9,7 +9,11 @@ module FlickrCollager
     def execute
       image_downloader.preload
       images = crop_images
-      assemble_collage(images)
+      collage = assemble_collage(images)
+      puts "collage have been generated"
+      printf "provide filename: "
+      filename = gets
+      collage.write("#{filename}.jpg")
     end
 
     private
@@ -18,8 +22,8 @@ module FlickrCollager
       ImageCropper.new(image_downloader.images).crop
     end
 
-    def assemble_collage
-      Collager.new(image_downloader.images).execute
+    def assemble_collage(images)
+      Collager.new(images).execute
     end
   end
 end
