@@ -1,8 +1,8 @@
+require "pry"
 require "flickr_collager/version"
 require "flickr_collager/cli"
-require "pry"
+require "flickr_collager/keyword_fetcher"
 
 module FlickrCollager
-  Cli.new.read
 end
 
