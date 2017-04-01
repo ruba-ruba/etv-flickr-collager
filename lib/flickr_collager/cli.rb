@@ -8,16 +8,18 @@ module FlickrCollager
 
     def execute
       image_downloader.preload
-      crop_images
-      assemble_collage
+      images = crop_images
+      assemble_collage(images)
     end
 
     private
 
     def crop_images
+      ImageCropper.new(image_downloader.images).crop
     end
 
     def assemble_collage
+      Collager.new(image_downloader.images).execute
     end
   end
 end

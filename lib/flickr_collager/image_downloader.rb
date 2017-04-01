@@ -2,13 +2,12 @@ require 'faraday'
 
 module FlickrCollager
   class ImageDownloader
-    COLLAGE_SIZE = 2
     attr_reader :keywords, :flickr_client, :dictionary, :images
 
     def initialize keywords, flickr_client = FlickrClient.new, dictionary = Dictionary.new
       @keywords        = keywords
       @flickr_client   = flickr_client
-      @dictionary = dictionary
+      @dictionary      = dictionary
       @images          = []
     end
 

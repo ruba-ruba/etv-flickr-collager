@@ -4,8 +4,10 @@ require "flickr_collager/cli"
 require "flickr_collager/dictionary"
 require "flickr_collager/image_downloader"
 require "flickr_collager/flickr_client"
+require "flickr_collager/collager"
 
 FLICKR_API_KEY = ENV['FLICKR_API_KEY']
 
 module FlickrCollager
+  COLLAGE_SIZE = 3.freeze
 end
