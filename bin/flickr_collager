@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'flickr_collager'
+FlickrCollager::Cli.new
