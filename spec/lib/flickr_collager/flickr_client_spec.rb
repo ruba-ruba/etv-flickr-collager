@@ -7,7 +7,7 @@ module FlickrCollager
         {
           "photos"=> {
              "photo"=> [
-                { "url"=>"image_url.jpg" }
+                { "url" => "image_url.jpg" }
               ]
           }
         }
@@ -20,8 +20,16 @@ module FlickrCollager
       subject { described_class.new.search_image('tag') }
 
       it "return photo array" do
-        expected = [{"url"=>"image_url.jpg"}]
+        expected = { "url" => "image_url.jpg" }
         expect(subject).to eq expected
+      end
+
+      context "when request failed" do
+        let(:response) { {} }
+
+        it "doesnt fail" do
+          expect(subject).to eq nil
+        end
       end
     end
   end

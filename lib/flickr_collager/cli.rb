@@ -1,29 +1,23 @@
 module FlickrCollager
   class Cli
-    attr_reader :keywords
+    attr_reader :image_downloader
 
     def initialize(keywords = [])
-      @keywords = keywords
-      @images = images
+      @image_downloader = ImageDownloader.new(keywords)
     end
 
     def execute
-      prepare_keywoards
-      download_images
+      image_downloader.preload
       crop_images
+      assemble_collage
     end
 
     private
 
-    def prepare_keywoards
-      @keywords ||= KeywordFetcher.new.prepare(keywords)
-    end
-
-    def download_images
-      @images ||= ImageDownloader.new(keywords).images
-    end
-
     def crop_images
+    end
+
+    def assemble_collage
     end
   end
 end
