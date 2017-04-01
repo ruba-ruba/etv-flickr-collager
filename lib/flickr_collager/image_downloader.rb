@@ -12,6 +12,7 @@ module FlickrCollager
     end
 
     def preload
+      print "preloading images #{images.size} of #{COLLAGE_SIZE} \r"
       return if images.size == COLLAGE_SIZE
       preload_image(keywords.pop || dictionary.sample)
       preload
