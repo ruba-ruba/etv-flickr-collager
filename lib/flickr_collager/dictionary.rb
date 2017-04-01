@@ -1,5 +1,5 @@
 module FlickrCollager
-  class KeywordFetcher
+  class Dictionary
     DEFAULT_DICT_PATH = "/usr/share/dict/words"
 
     def initialize(dict_path = DEFAULT_DICT_PATH)

@@ -3,18 +3,18 @@ require 'faraday'
 module FlickrCollager
   class ImageDownloader
     COLLAGE_SIZE = 2
-    attr_reader :keywords, :flickr_client, :keyword_fetcher, :images
+    attr_reader :keywords, :flickr_client, :dictionary, :images
 
-    def initialize keywords, flickr_client = FlickrClient.new, keyword_fetcher = KeywordFetcher.new
+    def initialize keywords, flickr_client = FlickrClient.new, dictionary = Dictionary.new
       @keywords        = keywords
       @flickr_client   = flickr_client
-      @keyword_fetcher = keyword_fetcher
+      @dictionary = dictionary
       @images          = []
     end
 
     def preload
       return if images.size == COLLAGE_SIZE
-      preload_image(keywords.pop || keyword_fetcher.sample)
+      preload_image(keywords.pop || dictionary.sample)
       preload
     end
 
