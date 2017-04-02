@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 module FlickrCollager
   RSpec.describe ImageCropper do
-    describe '#crop' do
+    describe "#crop" do
       let(:images) do
         Array.new(5) { Tempfile.new }
       end
@@ -16,11 +16,11 @@ module FlickrCollager
         described_class.new(images).crop
       end
 
-      it 'works' do
+      it "works" do
         expect { crop }.not_to raise_exception
       end
 
-      it 'close tmp files' do
+      it "close tmp files" do
         crop
         expect(images.all?(&:closed?)).to be_truthy
       end

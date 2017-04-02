@@ -1,6 +1,8 @@
 module FlickrCollager
   class BuilderError < StandardError; end
 
+  # load images, resize & build collage
+  # returns self
   class CollageBuilder
     def self.build(keywords)
       new(keywords).build
@@ -21,7 +23,7 @@ module FlickrCollager
     end
 
     private
-    
+
     def preload_images
       image_downloader = ImageDownloader.new(keywords)
       image_downloader.preload

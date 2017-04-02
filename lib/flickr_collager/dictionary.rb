@@ -1,6 +1,7 @@
 module FlickrCollager
+  # preload dictionary & return random word
   class Dictionary
-    DEFAULT_DICT_PATH = "/usr/share/dict/words"
+    DEFAULT_DICT_PATH = "/usr/share/dict/words".freeze
 
     def initialize(dict_path = DEFAULT_DICT_PATH)
       @dict_path = dict_path

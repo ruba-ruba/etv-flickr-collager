@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe FlickrCollager do
   pending "specs lies here"

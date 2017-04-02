@@ -12,5 +12,5 @@ require "flickr_collager/collage"
 FLICKR_API_KEY = ENV['FLICKR_API_KEY'].freeze
 
 module FlickrCollager
-  COLLAGE_SIZE = 10.freeze
+  COLLAGE_SIZE = 10
 end

@@ -2,7 +2,7 @@ require "spec_helper"
 
 module FlickrCollager
   RSpec.describe Dictionary do
-    let(:test_dict_path) { ("spec/fixtures/test_dict.txt") }
+    let(:test_dict_path) { "spec/fixtures/test_dict.txt" }
 
     subject do
       described_class.new(test_dict_path).sample

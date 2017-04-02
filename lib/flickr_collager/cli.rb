@@ -17,12 +17,11 @@ module FlickrCollager
     end
 
     def validate_env
-      if ::FLICKR_API_KEY.nil?
-        abort <<-MESSAGE
+      return unless ::FLICKR_API_KEY.nil?
+      abort <<-MESSAGE
 FLICKR_API_KEY wasn't setup.
 Make sure to add it using `export FLICKR_API_KEY={key}`
 MESSAGE
-      end
     end
   end
 end

@@ -1,6 +1,7 @@
-require 'faraday'
+require "faraday"
 
 module FlickrCollager
+  # download images and return array of files
   class ImageDownloader
     attr_reader :keywords, :flickr_client, :dictionary, :images
 
