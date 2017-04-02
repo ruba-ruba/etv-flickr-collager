@@ -7,6 +7,8 @@
 
 - navigate `cd flickr_collager`
 
+- run `bundle`
+
 - install dependencies `bundle exec rake install`
 
 - FlickrCollager depends on rmagic.
