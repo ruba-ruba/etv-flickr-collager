@@ -2,7 +2,7 @@ module FlickrCollager
   class Collage < Struct.new(:images, :crop_images, :result)
     def save(filename)
       filename = validate_filename(filename)
-      result.write(filename.concat(extension))
+      result.write("../#{filename}.#{extension}")
     end
 
     def extension
