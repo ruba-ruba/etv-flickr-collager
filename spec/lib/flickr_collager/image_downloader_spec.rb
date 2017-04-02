@@ -9,11 +9,11 @@ module FlickrCollager
       end
 
       subject do
-        described_class.new(keywords, flickr_client).preload
+        described_class.new(flickr_client).preload(keywords)
       end
 
       before do
-        stub_const("FlickrCollager::ImageDownloader::COLLAGE_SIZE", 2)
+        stub_const("FlickrCollager::COLLAGE_SIZE", 2)
         allow(Faraday).to receive(:get) { double(:response, body: "content") }
       end
 

@@ -25,8 +25,7 @@ module FlickrCollager
     private
 
     def preload_images
-      image_downloader = ImageDownloader.new(keywords)
-      image_downloader.preload
+      image_downloader.preload(keywords)
       collage.images = image_downloader.images
     end
 
@@ -38,6 +37,10 @@ module FlickrCollager
     def assemble_collage
       raise BuilderError.new("images not yet cropped") if Array(collage.crop_images).empty?
       collage.result = Collager.new(collage.crop_images).execute
+    end
+
+    def image_downloader
+      @image_downloader ||= ImageDownloader.new
     end
   end
 end
