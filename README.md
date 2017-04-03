@@ -7,25 +7,29 @@
 
 - navigate `cd flickr_collager`
 
+- FlickrCollager depends on rmagic. Make sure you installed
+
+  - on ubuntu:  `sudo apt-get install libmagickwand-dev`.
+  - on osx: `brew install imagemagick`
+
+  in case installation issues refer to [rmagick](https://github.com/rmagick/rmagick)
+
 - run `bundle`
 
 - install dependencies `bundle exec rake install`
-
-- FlickrCollager depends on rmagic.
- Make sure you installed `libmagickwand-dev`. See for details [rmagick](https://github.com/rmagick/rmagick)
 
 - setup flickr api key environment variable `export FLICKR_API_KEY={your_key_goes_here}`
 
 
 #### Usage
 
-run `bin/flickr_collager` within root folder of gem
+- run `bin/flickr_collager` within root folder of gem
 
-provide keywords to download images from flickr & wait a bit
+  - provide keywords to download images from flickr & wait a bit
 
-after provider filename for collage.
+  - after provide filename for collage.
 
-The newly created image is stored on gem folder level (`../`).
+- The newly created image is stored on gem folder level (`../`).
 
 
 #### Development
